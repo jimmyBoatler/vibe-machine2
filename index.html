@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Vibe Machine</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #0ff;
+      font-family: "Courier New", monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #vibe {
+      font-size: 1.5em;
+      padding: 1em;
+      border: 2px dashed #0ff;
+      margin-top: 1em;
+      max-width: 90%;
+    }
+    button {
+      font-size: 1em;
+      padding: 0.75em 1.5em;
+      border: none;
+      background: #0ff;
+      color: #111;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>The Vibe Machine</h1>
+    <button onclick="generateVibe()">Get a Vibe</button>
+    <div id="vibe"></div>
+  </div>
+
+  <script>
+    const vibes = [
+      "Today’s a weird dream. Just play your part.",
+      "You’re not behind. You’re just off-script.",
+      "Someone misses you but won’t say it.",
+      "The rain’s not the enemy. It’s the proof.",
+      "You’re the main character. Act like it.",
+      "Try again. But weirder this time.",
+      "Be softer with yourself. It’s heavy lately.",
+      "You were never meant to be normal.",
+      "Everything’s fake but your feelings are real.",
+      "You made it this far. That counts."
+    ];
+
+    function generateVibe() {
+      const vibeBox = document.getElementById("vibe");
+      const random = vibes[Math.floor(Math.random() * vibes.length)];
+      vibeBox.textContent = random;
+      setTimeout(() => {
+        vibeBox.textContent = "";
+      }, 6000);
+    }
+  </script>
+</body>
+</html>
